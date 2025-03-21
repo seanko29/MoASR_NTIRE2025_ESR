@@ -19,18 +19,21 @@ conda create -n $ENV_NAME python=3.9
 conda activate $ENV_NAME
 ````
 
-- Step2: Git clone this repository
-````  
-git clone https://github.com/seanko29/MoASR_NTIRE2025_ESR.git
-````
-
-- Step3: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
+- Step2: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
 ````  
 pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
 ````
 
+- Step3: Git clone this repository
+````  
+git clone https://github.com/seanko29/MoASR_NTIRE2025_ESR.git
+````
+
+
+
 - Step4: install other libs via:
   ````
+  cd MOASR_NTIRE2025_ESR
   pip install -r requirements.txt
   ````
 
