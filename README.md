@@ -24,10 +24,14 @@ conda activate $ENV_NAME
 ````
 
 - Step2: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
-`pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117`
+````  
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
+````
 
 - Step3: install other libs via:
-```pip install -r requirements.txt```
+  ````
+  pip install -r requirements.txt
+  ````
 
 The environment setting is kept as similar with [NTIRE2025 ESR](https://github.com/Amazingren/NTIRE2025_ESR)
 
