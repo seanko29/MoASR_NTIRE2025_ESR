@@ -1,12 +1,8 @@
-# Solution for Team AimF-SR: Mixture of Attention for Efficient Super Resolution -- [NTIRE 2025 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2025/)
+# Solution for (Team 10) Team AimF-SR: Mixture of Attention for Efficient Super Resolution -- [NTIRE 2025 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2025/)
 
 <div align=center>
 <img src="https://github.com/Amazingren/NTIRE2025_ESR/blob/main/figs/logo.png" width="400px"/> 
 </div>
-
-## News
-- :t-rex: February 8th, 2025: Our Challenge Repo. is ready!
-
 
 ## The Environments
 
@@ -46,6 +42,8 @@ After downloaded all the necessary validate dataset ([DIV2K_LSDIR_valid_LR](http
 
 ## Running Validation
 The shell script for validation is as follows: 
+Give the data_dir (HR & LR directory) and save_dir before running the command.
+This shell script can be found in run.sh
 ```python
 # --- Evaluation on LSDIR_DIV2K_valid datasets for One Method: ---
  CUDA_VISIBLE_DEVICES=0 python test_demo.py \
@@ -57,8 +55,16 @@ The shell script for validation is as follows:
  ````
   sh run.sh
   ````
-## Running Test (Organizers for this code only)
-
+## Running Test (Organizers only) - No HR&LR pair is given to the participants
+- Test for submission on CodaLab was ran on BasicSR codes. 
+```python
+# CUDA_VISIBLE_DEVICES=0 python test_demo.py \
+#     --data_dir ./test_data/ \
+#     --save_dir ./results \
+#     --include_test \
+#     --ssim \
+#     --model_id 10
+```
 ## How to calculate the number of parameters, FLOPs, and activations
 
 ```python
