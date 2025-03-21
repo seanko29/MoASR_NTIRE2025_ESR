@@ -1,0 +1,3 @@
+Model               	Val PSNR  	Val Time [ms] 	Params [M]	FLOPs [G] 	Acts [M]	Mem [M] 	Conv    
+10_MoeASR           	26.97     	43.31         	0.180     	9.44      	287.26  	453.29  	 147    
+00_EFDN_baseline    	26.93     	29.78         	0.276     	16.70     	111.12  	707.17  	  65    
