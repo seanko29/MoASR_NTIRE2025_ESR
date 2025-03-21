@@ -12,13 +12,23 @@
 
 The evaluation environments adopted by us is recorded in the `requirements.txt`. After you built your own basic Python (Python = 3.9 in our setting) setup via either *virtual environment* or *anaconda*, please try to keep similar to it via:
 
-- Step1: install Pytorch first:
+- Step 1: Make anaconda environment or virutal environment
+## Install
+Create a conda enviroment:
+````
+ENV_NAME="tisr25"
+conda create -n $ENV_NAME python=3.10
+conda activate $ENV_NAME
+````
+
+- Step2: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
 `pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117`
 
-- Step2: install other libs via:
+- Step3: install other libs via:
 ```pip install -r requirements.txt```
 
-or take it as a reference based on your original environments.
+The environment setting is kept as similar with [NTIRE2025 ESR](https://github.com/Amazingren/NTIRE2025_ESR)
+
 
 ## The Validation datasets
 After downloaded all the necessary validate dataset ([DIV2K_LSDIR_valid_LR](https://drive.google.com/file/d/1YUDrjUSMhhdx1s-O0I1qPa_HjW-S34Yj/view?usp=sharing) and [DIV2K_LSDIR_valid_HR](https://drive.google.com/file/d/1z1UtfewPatuPVTeAAzeTjhEGk4dg2i8v/view?usp=sharing)), please organize them as follows:
