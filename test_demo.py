@@ -30,7 +30,7 @@ def select_model(args, device):
     elif model_id == 10:
         from models.team10_MoeASR import MixtureofAttention_Multiply
         name, data_range = f"{model_id:02}_MoeASR", 1.0
-        model_path = os.path.join('model_zoo', 'team10_MoASR_block9.pth')
+        model_path = os.path.join('model_zoo', 'team10_MoASR.pth')
         model = MixtureofAttention_Multiply(dim=36, kernel_size=7, num_experts=3, topk=1, scale=4, num_blocks=9)
         model.load_state_dict(torch.load(model_path)["params_ema"], strict=True)
 
