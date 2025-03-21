@@ -30,32 +30,10 @@ def select_model(args, device):
     elif model_id == 10:
         from models.team10_MoeASR import MixtureofAttention_Multiply
         name, data_range = f"{model_id:02}_MoeASR", 1.0
-        model_path = os.path.join('model_zoo', 'team10_MoASR_9blocks.pth')
-        # model_path = '/home/sean/SR_project/ACCV/seemoredetails/experiments/moe_T_NTIRE_x4_pretrain_1e-3/models/net_g_495000.pth'
-        checkpoint = torch.load(model_path)
-
-        # model.load_state_dict(torch.load(model_path), strict=True)
-        if 'params' in checkpoint:
-            state_dict = checkpoint['params']
-        elif 'params_ema' in checkpoint:
-            state_dict = checkpoint['params_ema']
-        else:
-            state_dict = checkpoint
-            
+        model_path = os.path.join('model_zoo', 'team10_MoASR_block9.pth')
         model = MixtureofAttention_Multiply(dim=36, kernel_size=7, num_experts=3, topk=1, scale=4, num_blocks=9)
-        model.load_state_dict(state_dict, strict=False)
-        # pass # ---- Put your model here as below ---
-        # from models.team01_[your_model_name] import [your_model_name]
-        # name, data_range = f"{model_id:02}_[your_model_name]", [255.0 / 1.0] # You can choose either 1.0 or 255.0 based on your own model
-        # model_path = os.path.join('model_zoo', 'team01_[your_model_name].pth')
-        # model = [your_model_name]()
-        # model.load_state_dict(torch.load(model_path), strict=True)
-    elif model_id == 11: 
-        from models.team10_MoAReparam import MoAReparam
-        name, data_range = f"{model_id:02}_MoAReparam", 1.0
-        model_path = os.path.join('model_zoo', 'team10_MoAReparam.pth')
-        model = MoAReparam(dim=36, num_blocks=7, num_experts=3, kernel_size=7, topk=1, scale=4, upscale_mode='pixelshuffle', deploy=False)
-        model.load_state_dict(torch.load(model_path), strict=True)
+        model.load_state_dict(torch.load(model_path)["params_ema"], strict=True)
+
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
