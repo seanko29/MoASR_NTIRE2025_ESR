@@ -23,12 +23,17 @@ conda create -n $ENV_NAME python=3.9
 conda activate $ENV_NAME
 ````
 
-- Step2: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
+- Step2: Git clone this repository
+````  
+git clone https://github.com/seanko29/MoASR_NTIRE2025_ESR.git
+````
+
+- Step3: install Pytorch compatible to your GPU (in this case, we follow the environment setting for NTIRE 2025 ESR):
 ````  
 pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
 ````
 
-- Step3: install other libs via:
+- Step4: install other libs via:
   ````
   pip install -r requirements.txt
   ````
@@ -39,25 +44,20 @@ The environment setting is kept as similar with [NTIRE2025 ESR](https://github.c
 ## The Validation datasets
 After downloaded all the necessary validate dataset ([DIV2K_LSDIR_valid_LR](https://drive.google.com/file/d/1YUDrjUSMhhdx1s-O0I1qPa_HjW-S34Yj/view?usp=sharing) and [DIV2K_LSDIR_valid_HR](https://drive.google.com/file/d/1z1UtfewPatuPVTeAAzeTjhEGk4dg2i8v/view?usp=sharing)), please organize them as follows:
 
-
-## How to add your model to this baseline?
-
-1. Register your team in the [Google Spreadsheet](https://docs.google.com/spreadsheets/d/11JuxcS78C6Gxc8B436L4Zk4_m5soHaTcw3cnF8h5ctE/edit?usp=sharing) and get your team ID.
-2. Put your the code of your model in `./models/[Your_Team_ID]_[Your_Model_Name].py`
-   - Please add **only one** file in the folder `./models`. **Please do not add other submodules**.
-   - Please zero pad [Your_Team_ID] into two digits: e.g. 00, 01, 02 
-3. Put the pretrained model in `./model_zoo/[Your_Team_ID]_[Your_Model_Name].[pth or pt or ckpt]`
-   - Please zero pad [Your_Team_ID] into two digits: e.g. 00, 01, 02  
-4. Add your model to the model loader `./test_demo/select_model` as follows:
-    ```python
-        elif model_id == [Your_Team_ID]:
-            # define your model and load the checkpoint
-    ```
-   - Note: Please set the correct data_range, either 255.0 or 1.0
-5. Send us the command to download your code, e.g, 
-   - `git clone [Your repository link]`
-   - We will do the following steps to add your code and model checkpoint to the repository.
-   
+## Running Validation
+The shell script for validation is as follows: 
+```python
+# --- Evaluation on LSDIR_DIV2K_valid datasets for One Method: ---
+ CUDA_VISIBLE_DEVICES=0 python test_demo.py \
+    --data_dir ./real_validation \
+    --save_dir ./NTIRE2025_ESR/results \
+    --ssim \
+    --model_id 10
+```
+ ````
+  sh run.sh
+  ````
+## Running Test (Organizers for this code only)
 
 ## How to calculate the number of parameters, FLOPs, and activations
 
