@@ -33,7 +33,7 @@ git clone https://github.com/seanko29/MoASR_NTIRE2025_ESR.git
 
 - Step4: install other libs via:
   ````
-  cd MOASR_NTIRE2025_ESR
+  cd MoASR_NTIRE2025_ESR
   pip install -r requirements.txt
   ````
 
