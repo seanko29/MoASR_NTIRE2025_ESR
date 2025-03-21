@@ -1,4 +1,4 @@
-# [NTIRE 2025 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2025/) @ [CVPR 2025](https://cvpr.thecvf.com/)
+# Solution for Team AimF-SR: Mixture of Attention for Efficient Super Resolution -- [NTIRE 2025 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2025/)
 
 <div align=center>
 <img src="https://github.com/Amazingren/NTIRE2025_ESR/blob/main/figs/logo.png" width="400px"/> 
