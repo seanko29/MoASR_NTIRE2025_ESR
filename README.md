@@ -43,6 +43,34 @@ The environment setting is kept as similar with [NTIRE2025 ESR](https://github.c
 ## The Validation datasets
 After downloaded all the necessary validate dataset ([DIV2K_LSDIR_valid_LR](https://drive.google.com/file/d/1YUDrjUSMhhdx1s-O0I1qPa_HjW-S34Yj/view?usp=sharing) and [DIV2K_LSDIR_valid_HR](https://drive.google.com/file/d/1z1UtfewPatuPVTeAAzeTjhEGk4dg2i8v/view?usp=sharing)), please organize them as follows:
 
+```
+|NTIRE2024_ESR_Challenge/
+|--DIV2K_LSDIR_valid_HR/
+|    |--000001.png
+|    |--000002.png
+|    |--...
+|    |--000100.png
+|    |--0801.png
+|    |--0802.png
+|    |--...
+|    |--0900.png
+|--DIV2K_LSDIR_valid_LR/
+|    |--000001x4.png
+|    |--000002x4.png
+|    |--...
+|    |--000100x4.png
+|    |--0801x4.png
+|    |--0802x4.png
+|    |--...
+|    |--0900.png
+|--NTIRE2024_ESR/
+|    |--...
+|    |--test_demo.py
+|    |--...
+|--results/
+|--......
+```
+
 ## Running Validation
 The shell script for validation is as follows: 
 Give the data_dir (HR & LR directory) and save_dir before running the command.
@@ -50,11 +78,12 @@ This shell script can be found in run.sh
 ```python
 # --- Evaluation on LSDIR_DIV2K_valid datasets for One Method: ---
  CUDA_VISIBLE_DEVICES=0 python test_demo.py \
-    --data_dir ./real_validation \
+    --data_dir ./NTIRE2024_ESR_Challenge \
     --save_dir ./NTIRE2025_ESR/results \
     --ssim \
     --model_id 10
 ```
+## Simply Run using this command
  ````
   sh run.sh
   ````
