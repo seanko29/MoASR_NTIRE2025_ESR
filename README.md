@@ -73,7 +73,6 @@ After downloaded all the necessary validate dataset ([DIV2K_LSDIR_valid_LR](http
 
 ## Running Validation
 The shell script for validation is as follows: 
-Give the data_dir (HR & LR directory) and save_dir before running the command.
 This shell script can be found in run.sh
 ```python
 # --- Evaluation on LSDIR_DIV2K_valid datasets for One Method: ---
@@ -83,6 +82,9 @@ This shell script can be found in run.sh
     --ssim \
     --model_id 10
 ```
+
+### Fix and Give the data_dir (HR & LR directory) and save_dir before running the command.
+
 ## Simply Run using this command
  ````
   sh run.sh
