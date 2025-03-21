@@ -12,12 +12,14 @@
 
 The evaluation environments adopted by us is recorded in the `requirements.txt`. After you built your own basic Python (Python = 3.9 in our setting) setup via either *virtual environment* or *anaconda*, please try to keep similar to it via:
 
-- Step 1: Make anaconda environment or virutal environment
+
 ## Install
+
+- Step 1: Make anaconda environment or virutal environment
 Create a conda enviroment:
 ````
-ENV_NAME="tisr25"
-conda create -n $ENV_NAME python=3.10
+ENV_NAME="ntire25"
+conda create -n $ENV_NAME python=3.9
 conda activate $ENV_NAME
 ````
 
